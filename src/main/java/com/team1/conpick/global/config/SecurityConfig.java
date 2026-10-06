@@ -1,11 +1,12 @@
-package com.team1.conpick;
+package com.team1.conpick.global.config;
 
 
-import com.team1.conpick.user.handler.OAuth2SuccessHandler;
-import com.team1.conpick.user.jwt.JwtAuthenticationFilter;
+import com.team1.conpick.auth.OAuth2SuccessHandler;
+import com.team1.conpick.auth.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,6 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
+@EnableJpaAuditing
 @RequiredArgsConstructor
 public class SecurityConfig {
 
@@ -28,7 +30,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/oauth2/**", "/login**").permitAll()
+                        .requestMatchers("/oauth2/**", "/login**", "/error").permitAll()
                         .anyRequest().authenticated())
                 .oauth2Login(oauth -> oauth.successHandler(oAuth2SuccessHandler))
                 .exceptionHandling(e -> e

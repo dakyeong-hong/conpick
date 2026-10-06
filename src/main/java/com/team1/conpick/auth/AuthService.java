@@ -1,4 +1,4 @@
-package com.team1.conpick.user.auth;
+package com.team1.conpick.auth;
 
 import com.team1.conpick.user.Provider;
 import com.team1.conpick.user.User;

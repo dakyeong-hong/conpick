@@ -1,4 +1,4 @@
-package com.team1.conpick.user.jwt;
+package com.team1.conpick.auth.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

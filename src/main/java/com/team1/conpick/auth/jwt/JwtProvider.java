@@ -1,4 +1,4 @@
-package com.team1.conpick.user.jwt;
+package com.team1.conpick.auth.jwt;
 
 import com.team1.conpick.user.User;
 import io.jsonwebtoken.Claims;

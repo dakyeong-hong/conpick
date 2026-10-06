@@ -1,9 +1,8 @@
-package com.team1.conpick.user.handler;
+package com.team1.conpick.auth;
 
 
 import com.team1.conpick.user.User;
-import com.team1.conpick.user.auth.AuthService;
-import com.team1.conpick.user.jwt.JwtProvider;
+import com.team1.conpick.auth.jwt.JwtProvider;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
