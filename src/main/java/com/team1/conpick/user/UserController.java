@@ -17,7 +17,7 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/user/me")
+    @GetMapping("/users/me")
     public String me(@AuthenticationPrincipal Long userId){
         User user = userRepository.findById(userId).orElseThrow();
         return user.getEmail();
